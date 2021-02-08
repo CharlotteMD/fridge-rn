@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { RecipesScreen } from './RecipesScreen';
+import { IngredientsScreen } from './IngredientsScreen';
 import * as recipeData from './recipes.json';
 
 const Stack = createStackNavigator();
@@ -16,7 +17,7 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={HomeScreen}
+          component={IngredientsScreen}
           options={{ title: "What's in your fridge?" }}
         />
         <Stack.Screen name="Recipes" component={RecipesScreen} />
@@ -35,15 +36,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
-const HomeScreen = ({ navigation }) => {
-  return (
-    <Button
-      title="Go to Recipes"
-      onPress={() =>
-        navigation.navigate('Recipes', { name: 'Jane' })
-      }
-    />
-  );
-};
 

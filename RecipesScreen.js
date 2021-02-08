@@ -16,7 +16,7 @@ export const RecipesScreen = ({ navigation, route }) => {
   return (
      <View>
         {Object.keys(recipeData).map(function(key) {
-        return <Text>{recipeData[key].recipeName}</Text>
+        return <Text key={`RecipeScreen-${recipeData[key].recipeName}`}>{recipeData[key].recipeName}</Text>
         })} 
     </View>
     );

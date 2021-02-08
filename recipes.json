@@ -1,0 +1,78 @@
+[
+    {
+        "recipeName": "Fish Tacos",
+        "ingredients": [
+            "fish",
+            "fajita spice mix",
+            "wraps",
+            "peppers",
+            "onions",
+            "creme fraiche"
+        ]
+    },{
+        "recipeName": "Chicken Fajitas",
+        "ingredients": [
+            "chicken",
+            "fajita spice mix",
+            "wraps",
+            "peppers",
+            "onions",
+            "cheese"
+        ]
+    },{
+        "recipeName": "Halloumi Wraps",
+        "ingredients": [
+            "halloumi",
+            "fajita spice mix",
+            "wraps",
+            "peppers",
+            "onions",
+            "salsa"
+        ]
+    },{
+        "recipeName": "Halloumi Curry",
+        "ingredients": [
+            "halloumi",
+            "coconut milk",
+            "tomatoes",
+            "onions",
+            "peppers",
+            "sweet potato",
+            "curry powder"
+        ]
+    },{
+        "recipeName": "Chickpea Curry",
+        "ingredients": [
+            "chickpeas",
+            "tomatoes",
+            "onions",
+            "potato",
+            "pepper",
+            "spice"
+        ]
+    },{
+        "recipeName": "Pizzetta",
+        "ingredients": [
+            "wraps",
+            "pasata sauce",
+            "cheese",
+            "onions",
+            "peppers"
+        ]
+    },{
+        "recipeName": "English Breakfast",
+        "ingredients": [
+            "eggs",
+            "sausages",
+            "baked beans"
+        ]
+    },{
+        "recipeName": "Toasties",
+        "ingredients": [
+            "bread",
+            "cheese",
+            "butter",
+            "onions"
+        ]
+    }
+]

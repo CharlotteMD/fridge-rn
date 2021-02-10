@@ -6,6 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { RecipesScreen } from './RecipesScreen';
 import { IngredientsScreen } from './IngredientsScreen';
+import { RecipeDetailsScreen } from './RecipeDetailsScreen';
+
+import * as recipeData from './recipes.json';
 
 const Stack = createStackNavigator();
 
@@ -20,10 +23,20 @@ const App = () => {
           options={{ title: "What's in your fridge?" }}
         />
         <Stack.Screen name="Recipes" component={RecipesScreen} />
+        {Object.keys(recipeData).map(function(key) {
+          console.log('here', recipeData[key].recipeName)
+          return (
+            <Stack.Screen 
+              name={`Recipe: ${recipeData[key].recipeName}`}
+              recipe={recipeData[key]}
+              component={RecipeDetailsScreen}
+              option={{title: `${recipeData[key].recipeName}`}}
+          />)
+        })}
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
-

@@ -23,7 +23,8 @@ export const IngredientsScreen = ({ navigation, route }) => {
             }
           })
           let completeIngredientsList = allRecipeIngredients.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);
-          setAllIngredients(completeIngredientsList);
+          let alphabeticalList = completeIngredientsList.sort((a, b) => a.localeCompare(b))
+          setAllIngredients(alphabeticalList);
           return completeIngredientsList;
     };
 

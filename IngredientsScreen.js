@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, ImageBackground } from 'react-native';
 import 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import * as recipeData from './recipes.json';
 
@@ -47,21 +48,54 @@ useEffect(() => {
 
 
   return (
-     <View>
+    <View>
         <Button
             title="Go to Recipes"
             onPress={() =>
-              navigation.navigate('Recipes', { name: 'Jane' })
+            navigation.navigate('Recipes', { name: 'Jane' })
             }
         />
 
-        {isLoading ? 
-            (<Text>undefined</Text>)
-            : 
-            (allIngredients.map(function(ingredients) {
-                return <Text >{ingredients}</Text>
-            }))
-        } 
+        <View style={fridgeStyles.contentContainer}>
+            {isLoading ? 
+                (<Image
+                    source={require('./fridge.png')} 
+                    style={{ width: 300}}
+                />)
+                : 
+                (allIngredients.map(function(ingredients) {
+                    return (
+                        <View style={fridgeStyles.smallerContainer}>
+                            <Text>{ingredients}</Text>
+                        </View>
+                    )
+                }))
+            } 
+        </View>
+
     </View>
-    );
-};
+)};
+
+const fridgeStyles = StyleSheet.create({
+  contentContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignSelf: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    maxWidth: '90%',
+    borderRadius: 20,
+    borderColor: 'lightgrey',
+    borderWidth: 10,
+  },
+  smallerContainer: {
+    width: 90,
+    height: 90,
+    borderRadius: 20,
+    borderColor: 'lightgrey',
+    borderWidth: 5,
+    padding: 2,
+    margin: 3,
+  }
+});
+

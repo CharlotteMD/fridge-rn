@@ -6,7 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { RecipesScreen } from './RecipesScreen';
 import { IngredientsScreen } from './IngredientsScreen';
-import * as recipeData from './recipes.json';
 
 const Stack = createStackNavigator();
 
@@ -25,15 +24,6 @@ const App = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
 

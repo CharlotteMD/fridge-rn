@@ -8,7 +8,7 @@ export const RecipeDetailsScreen = ({ navigation, route, recipe }) => {
 console.log(recipe)
   return (
      <View style={recipeStyles.contentContainer}>
-        <Text>Learn how to make this</Text>
+        <Text>Learn how to make {recipe}</Text>
     </View>
     );
 };

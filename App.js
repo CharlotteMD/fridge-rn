@@ -24,11 +24,10 @@ const App = () => {
         />
         <Stack.Screen name="Recipes" component={RecipesScreen} />
         {Object.keys(recipeData).map(function(key) {
-          console.log('here', recipeData[key].recipeName)
           return (
             <Stack.Screen 
               name={`Recipe: ${recipeData[key].recipeName}`}
-              recipe={recipeData[key]}
+              recipe={recipeData[key].recipeName}
               component={RecipeDetailsScreen}
               option={{title: `${recipeData[key].recipeName}`}}
           />)

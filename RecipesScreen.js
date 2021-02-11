@@ -8,7 +8,6 @@ import * as recipeData from './recipes.json';
 
 export const RecipesScreen = ({ navigation, route }) => {
 
-console.log(recipeData)
   return (
      <View style={recipeStyles.contentContainer}>
         {Object.keys(recipeData).map(function(key) {
@@ -19,7 +18,7 @@ console.log(recipeData)
                             style={recipeStyles.smallerContainer}
                             title={`Go to ${recipeData[key].recipeName}`}
                             onPress={() =>
-                            navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { name: 'Jane' })}
+                                navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipe: 'Hello' })}
                         >
                             <Image
                                 source={require('./fridge.png')} 

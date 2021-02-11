@@ -18,9 +18,11 @@ export const RecipesScreen = ({ navigation, route }) => {
                             <Button
                                 style={recipeStyles.smallerContainer}
                                 title={`Go to ${recipeData[key].recipeName}`}
-                                onPress={() =>
-                                    navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipe: 'Hello' })}
-                            >
+                                onPress={() => {
+                                    console.log('recipe', recipeData[key].recipeName)
+                                    navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipeName: `${recipeData[key].recipeName}`, ingredients: `${recipeData[key].ingredients}` })}
+                                }                            
+                                >
                                 <Image
                                     source={require('./fridge.png')} 
                                     style={recipeStyles.recipeImage}

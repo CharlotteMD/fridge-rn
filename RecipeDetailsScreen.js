@@ -3,12 +3,13 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import 'react-native-gesture-handler';
 
 
-export const RecipeDetailsScreen = ({ navigation, route, recipe }) => {
-
-console.log(recipe)
+export const RecipeDetailsScreen = ({ navigation, route }) => {
+const { recipeName, ingredients } = route.params;
+console.log('here', recipeName, ingredients)
   return (
      <View style={recipeStyles.contentContainer}>
-        <Text>Learn how to make {recipe}</Text>
+        <Text>Learn how to make {recipeName}</Text>
+        <Text>Ingredients: {ingredients}</Text>
     </View>
     );
 };

@@ -11,6 +11,7 @@ export const IngredientsScreen = ({ navigation, route }) => {
     const [ isLoading, setIsLoading ] = useState(true);
     const [ allIngredients, setAllIngredients ] = useState();
     const [ allRecipeData, setAllRecipeData ] = useState(recipeData);
+    const [ checkedIngredientsArray, setCheckedIngredientsArray ] = useState([])
 
     let allRecipeIngredients = [];
     let completeIngredientsList = [];
@@ -37,6 +38,13 @@ export const IngredientsScreen = ({ navigation, route }) => {
 
 
 
+    function checkIngredient(ingredients) {
+        console.log(ingredients)
+        setCheckedIngredientsArray([...checkedIngredientsArray, ingredients] )
+    }
+
+
+
 useEffect(() => {
     getIngredients();
 }, [allRecipeData]);
@@ -47,13 +55,17 @@ useEffect(() => {
     }
 }, [allIngredients]);
 
+useEffect(() => {
+    console.log(checkedIngredientsArray)
+}, [checkedIngredientsArray]);
+
 
   return (
     <View>
         <Button
             title="Go to Recipes"
             onPress={() =>
-            navigation.navigate('Recipes', { name: 'Jane' })
+            navigation.navigate('Recipes')
             }
         />
 
@@ -67,7 +79,14 @@ useEffect(() => {
                 (allIngredients.map(function(ingredients) {
                     return (
                         <View style={fridgeStyles.smallerContainer}>
-                            <Text>{ingredients}</Text>
+                            <Image
+                                source={require('./fridge.png')} 
+                                style={{ width: 30, height: 30}}
+                            />
+                            <Button
+                                title={ingredients}
+                                onPress={()=> checkIngredient(ingredients)}
+                            />
                         </View>
                     )
                 }))

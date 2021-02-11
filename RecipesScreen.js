@@ -9,30 +9,32 @@ import * as recipeData from './recipes.json';
 export const RecipesScreen = ({ navigation, route }) => {
 
   return (
-     <View style={recipeStyles.contentContainer}>
-        {Object.keys(recipeData).map(function(key) {
-            return (
-                (recipeData[key].recipeName !== undefined) && (
-                    <View style={recipeStyles.smallerContainer} key={`Recipe-screen_${recipeData[key].recipeName}`}>
-                        <Button
-                            style={recipeStyles.smallerContainer}
-                            title={`Go to ${recipeData[key].recipeName}`}
-                            onPress={() =>
-                                navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipe: 'Hello' })}
-                        >
-                            <Image
-                                source={require('./fridge.png')} 
-                                style={recipeStyles.recipeImage}
-                            />
-                            <Text key={`RecipeScreen-${recipeData[key].recipeName}`}>
-                                {recipeData[key].recipeName}
-                            </Text>
-                        </Button>
-                    </View>
+     <View >
+        <ScrollView contentContainerStyle={recipeStyles.contentContainer}>
+            {Object.keys(recipeData).map(function(key) {
+                return (
+                    (recipeData[key].recipeName !== undefined) && (
+                        <View style={recipeStyles.smallerContainer} key={`Recipe-screen_${recipeData[key].recipeName}`}>
+                            <Button
+                                style={recipeStyles.smallerContainer}
+                                title={`Go to ${recipeData[key].recipeName}`}
+                                onPress={() =>
+                                    navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipe: 'Hello' })}
+                            >
+                                <Image
+                                    source={require('./fridge.png')} 
+                                    style={recipeStyles.recipeImage}
+                                />
+                                <Text key={`RecipeScreen-${recipeData[key].recipeName}`}>
+                                    {recipeData[key].recipeName}
+                                </Text>
+                            </Button>
+                            
+                        </View>
+                    )
                 )
-            )
-        })} 
-
+            })} 
+        </ScrollView>
     </View>
     );
 };

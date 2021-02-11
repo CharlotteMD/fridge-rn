@@ -57,7 +57,7 @@ useEffect(() => {
             }
         />
 
-        <View style={fridgeStyles.contentContainer}>
+        <ScrollView contentContainerStyle={fridgeStyles.contentContainer}>
             {isLoading ? 
                 (<Image
                     source={require('./fridge.png')} 
@@ -72,7 +72,7 @@ useEffect(() => {
                     )
                 }))
             } 
-        </View>
+        </ScrollView>
 
     </View>
 )};

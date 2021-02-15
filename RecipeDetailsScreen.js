@@ -4,12 +4,13 @@ import 'react-native-gesture-handler';
 
 
 export const RecipeDetailsScreen = ({ navigation, route }) => {
-const { recipeName, ingredients } = route.params;
-console.log('here', recipeName, ingredients)
+const { recipeName, ingredients, recipe } = route.params;
+
   return (
      <View style={recipeStyles.contentContainer}>
         <Text>Learn how to make {recipeName}</Text>
         <Text>Ingredients: {ingredients}</Text>
+        <Text>Recipe: {recipe}</Text>
     </View>
     );
 };

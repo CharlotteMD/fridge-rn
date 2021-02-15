@@ -12,9 +12,12 @@ export const IngredientsScreen = ({ navigation, route }) => {
     const [ allIngredients, setAllIngredients ] = useState();
     const [ allRecipeData, setAllRecipeData ] = useState(recipeData);
     const [ checkedIngredientsArray, setCheckedIngredientsArray ] = useState([])
+    const [ recipeSuggestions, setRecipeSuggestions ] = useState();
 
     let allRecipeIngredients = [];
     let completeIngredientsList = [];
+
+    // console.log(allRecipeData)
 
     function getIngredients() {
         Object.keys(recipeData).map(function(key) {
@@ -37,12 +40,45 @@ export const IngredientsScreen = ({ navigation, route }) => {
     };
 
 
-
     function checkIngredient(ingredients) {
-        console.log(ingredients)
-        setCheckedIngredientsArray([...checkedIngredientsArray, ingredients] )
+        if (!checkedIngredientsArray.includes(ingredients)) {
+            setCheckedIngredientsArray([...checkedIngredientsArray, ingredients] )
+        } else {
+            let toRemove = checkedIngredientsArray.filter(item => item !== ingredients)
+            setCheckedIngredientsArray(toRemove);
+        }
     }
 
+    // function getRecipes(ingredient) {
+    //     allRecipeData[key].ingredients.map(ingredients => {
+    //         if (ingredients === ingredient) {
+    //             let recipeList = myRecipeArray.push(allRecipeData[key])
+    //             setRecipeSuggestions(recipeList);
+    //         }
+    //     })
+    // }
+
+    // function getRecipes(ingredient) {
+    //     let myRecipeArray = [];
+    //     Object.keys(allRecipeData).map(function(key) {
+    //         const recipeIngredients = allRecipeData[key].ingredients;
+            
+    //         let howMany = Array.isArray(recipeIngredients);
+    //         if (howMany) {
+    //             allRecipeData[key].ingredients.map(ingredients => {
+    //                 if (ingredients === ingredient) {
+    //                     myRecipeArray.push(allRecipeData[key])
+    //                 }
+    //             })
+    //         } else {
+    //             const filteredRecipes = Object.keys(allRecipeData).filter(e => allRecipeData[e].ingredients === ingredient)
+    //             if (filteredRecipes.length > 0) {
+    //                 myRecipeArray.push(filteredRecipes)
+    //             }
+    //         }
+    //       })
+    //       setRecipeSuggestions(myRecipeArray)
+    // }
 
 
 useEffect(() => {
@@ -55,9 +91,13 @@ useEffect(() => {
     }
 }, [allIngredients]);
 
+// useEffect(() => {
+//     checkedIngredientsArray.map(ingredient => (getRecipes(ingredient)))
+// }, [checkedIngredientsArray]);
+
 useEffect(() => {
-    console.log(checkedIngredientsArray)
-}, [checkedIngredientsArray]);
+    console.log('recipes', recipeSuggestions)
+}, [recipeSuggestions])
 
 
   return (
@@ -68,6 +108,8 @@ useEffect(() => {
             navigation.navigate('Recipes')
             }
         />
+
+        <Text>{checkedIngredientsArray}</Text>
 
         <ScrollView contentContainerStyle={fridgeStyles.contentContainer}>
             {isLoading ? 

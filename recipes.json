@@ -8,6 +8,13 @@
             "peppers",
             "onions",
             "creme fraiche"
+        ],
+        "recipe": [
+            "Cover the fish in half the fajita mix. You may also want to season it and add a little oil.",
+            "Bake at around 200c for 15-20 mins until the fish is flakey.",
+            "In the meantime, cut up the peppers, onions and whatever other veg you have available. Stirfry the veg in a little oil and the rest of the fajita mix.",
+            "Warm the wraps in the microwave.",
+            "When everything is cooked, add the fish and veg to the wraps and add creme fraiche, salsa, cheese or guacamole as preferred."
         ]
     },{
         "recipeName": "Chicken Fajitas",
@@ -18,6 +25,12 @@
             "peppers",
             "onions",
             "cheese"
+        ],
+        "recipe": [
+            "Cut up the onions and chicken and brown off in a pan.",
+            "Cut up the peppers and whatever other veg you have available and add them to the pan with the fajita mix and a little oil. Keep stirring to cover the chicken and veg in the fajita mix.",
+            "Warm the wraps in the microwave.",
+            "When everything is cooked, add the chicken and veg to the wraps and add creme fraiche, salsa, cheese or guacamole as preferred."
         ]
     },{
         "recipeName": "Halloumi Wraps",
@@ -28,27 +41,49 @@
             "peppers",
             "onions",
             "salsa"
+        ],
+        "recipe": [
+            "Cut up the onions and halloumi and brown off in a pan.",
+            "Cut up the peppers and whatever other veg you have available and add them to the pan with the fajita mix and a little oil. Keep stirring to cover the halloumi and veg in the fajita mix.",
+            "Warm the wraps in the microwave.",
+            "When everything is cooked, add the halloumi and veg to the wraps and add creme fraiche, salsa, cheese or guacamole as preferred."
         ]
     },{
         "recipeName": "Halloumi Curry",
         "ingredients": [
             "halloumi",
             "coconut milk",
-            "tomatoes",
+            "tinned tomatoes",
             "onions",
             "peppers",
             "sweet potato",
             "curry powder"
+        ],
+        "recipe": [
+            "Cut up the onions and halloumi and brown off in a pan.",
+            "Cut and peel the sweet potato and/or potatoes, and boil them with a little salt.",
+            "When onions, halloumi and potatoes are ready, add them all to a big pan with the tinned tomatoes.",
+            "Add a tablespoon of curry powder. You can also add paprika, pepper, salt or whatever flavouring you like. Remember to taste as you go.",
+            "When you are happy with the flavour, add the coconut milk.",
+            "Cut up the peppers and whatever other veg you have available. Chickpeas work well. Add them to the pan and leave to simmer.",
+            "When ready, serve with rice or flat bread. Tastes even better as leftovers."
         ]
     },{
         "recipeName": "Chickpea Curry",
         "ingredients": [
             "chickpeas",
-            "tomatoes",
+            "tinned tomatoes",
             "onions",
             "potato",
             "peppers",
             "spice"
+        ],
+        "recipe": [
+            "Cut up the onions and brown off in a pan.",
+            "Cut and peel the sweet potato and/or potatoes, and boil them with a little salt.",
+            "When onions and potatoes are ready, add them to a big pan with the tinned tomatoes and chickpeas.",
+            "Add a tablespoon of curry powder. You can also add paprika, pepper, salt or whatever flavouring you like. Remember to taste as you go.",
+            "When you are happy with the flavour, serve on its own or with rice, cheese and/or creme fraiche."
         ]
     },{
         "recipeName": "Pizzetta",
@@ -58,21 +93,11 @@
             "cheese",
             "onions",
             "peppers"
-        ]
-    },{
-        "recipeName": "English Breakfast",
-        "ingredients": [
-            "eggs",
-            "sausages",
-            "baked beans"
-        ]
-    },{
-        "recipeName": "Toasties",
-        "ingredients": [
-            "bread",
-            "cheese",
-            "butter",
-            "onions"
+        ],
+        "recipe": [
+            "Cover wrap with pasata sauce using the back of a tea spoon. If you like, you can also season with salt, pepper or herbs.",
+            "Cut up the onions, peppers or whatever else you fancy for your pizetta. Place them on the pizetta and then cover with cheese.",
+            "Bake in the oven at 180c for about 10 minutes or until the cheese bubbles."
         ]
     }
 ]

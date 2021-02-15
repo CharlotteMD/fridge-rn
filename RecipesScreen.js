@@ -5,22 +5,20 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import * as recipeData from './recipes.json';
 
-
 export const RecipesScreen = ({ navigation, route }) => {
 
   return (
      <View >
-        <ScrollView contentContainerStyle={recipeStyles.contentContainer}>
-            {Object.keys(recipeData).map(function(key) {
+       <ScrollView contentContainerStyle={recipeStyles.contentContainer}>
+           {Object.keys(recipeData).map(function(key) {
                 return (
                     (recipeData[key].recipeName !== undefined) && (
-                        <View style={recipeStyles.smallerContainer} key={`Recipe-screen_${recipeData[key].recipeName}`}>
+                       <ScrollView style={recipeStyles.smallerContainer} key={`Recipe-screen_${recipeData[key].recipeName}`}>
                             <Button
                                 style={recipeStyles.smallerContainer}
                                 title={`Go to ${recipeData[key].recipeName}`}
                                 onPress={() => {
-                                    console.log('recipe', recipeData[key].recipeName)
-                                    navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipeName: `${recipeData[key].recipeName}`, ingredients: `${recipeData[key].ingredients}` })}
+                                    navigation.navigate(`Recipe: ${recipeData[key].recipeName}`, { recipeName: `${recipeData[key].recipeName}`, ingredients: `${recipeData[key].ingredients}`, recipe: `${recipeData[key].recipe}` })}
                                 }                            
                                 >
                                 <Image
@@ -31,11 +29,10 @@ export const RecipesScreen = ({ navigation, route }) => {
                                     {recipeData[key].recipeName}
                                 </Text>
                             </Button>
-                            
-                        </View>
+                        </ScrollView>
                     )
                 )
-            })} 
+            })}  
         </ScrollView>
     </View>
     );

@@ -1,40 +1,25 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { RecipesScreen } from './RecipesScreen';
-import { IngredientsScreen } from './IngredientsScreen';
-import { RecipeDetailsScreen } from './RecipeDetailsScreen';
+import { IngredientsNavigator } from './IngredientsNavigator';
+import { RecipeNavigator } from './RecipeNavigator';
 
-import * as recipeData from './recipes.json';
-
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={IngredientsScreen}
-          options={{ title: "What's in your fridge?" }}
-        />
-        <Stack.Screen name="Recipes" component={RecipesScreen} />
-        {Object.keys(recipeData).map(function(key) {
-          return (
-            <Stack.Screen 
-              name={`Recipe: ${recipeData[key].recipeName}`}
-              recipe={recipeData[key].recipeName}
-              component={RecipeDetailsScreen}
-              option={{title: `${recipeData[key].recipeName}`}}
-          />)
-        })}
 
-      </Stack.Navigator>
-    </NavigationContainer>
+    <NavigationContainer>
+    <Tab.Navigator>
+        <Tab.Screen name="Fridge" component={IngredientsNavigator} />
+        <Tab.Screen name="Recipes" component={RecipeNavigator} />
+    </Tab.Navigator>
+</NavigationContainer>
+
+
   );
 };
 

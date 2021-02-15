@@ -5,7 +5,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import * as recipeData from './recipes.json';
 
-
 export const IngredientsScreen = ({ navigation, route }) => {
 
     const [ isLoading, setIsLoading ] = useState(true);

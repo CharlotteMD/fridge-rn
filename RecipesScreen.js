@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import 'react-native-gesture-handler';
 import { ScrollView } from 'react-native-gesture-handler';
+
+import { createStackNavigator } from '@react-navigation/stack';
 
 import * as recipeData from './recipes.json';
 
